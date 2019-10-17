@@ -38,6 +38,7 @@
                     <connections>
                         <outlet property="photo_side" destination="c4u-Wa-lXR" id="WEr-aP-E6X"/>
                         <outlet property="start_button_out" destination="6OB-BT-vIA" id="lTc-Tm-5kK"/>
+                        <segue destination="uOs-OF-Aa6" kind="show" identifier="enter_game_view" id="jrX-SG-n88"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -47,17 +48,82 @@
         <!--GameVC-->
         <scene sceneID="gj1-RM-9dc">
             <objects>
-                <viewController id="uOs-OF-Aa6" customClass="GameVC" customModule="Memory_game" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="HhE-Ig-tdA">
+                <viewController storyboardIdentifier="game_view" id="uOs-OF-Aa6" customClass="GameVC" customModule="Memory_game" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="GameVC" id="HhE-Ig-tdA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJJ-Nf-XP8">
+                                <rect key="frame" x="10" y="545" width="120" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="arboles"/>
+                                <connections>
+                                    <action selector="button_1:" destination="uOs-OF-Aa6" eventType="touchUpInside" id="A78-7o-Nf9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jsa-vw-b38">
+                                <rect key="frame" x="147" y="545" width="120" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="barco"/>
+                                <connections>
+                                    <action selector="button_2:" destination="uOs-OF-Aa6" eventType="touchUpInside" id="nkD-IF-5R3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tyU-DX-iX1">
+                                <rect key="frame" x="283" y="545" width="120" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="carretera"/>
+                                <connections>
+                                    <action selector="button_3:" destination="uOs-OF-Aa6" eventType="touchUpInside" id="r3A-T8-sRr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c91-Eq-x7R">
+                                <rect key="frame" x="10" y="686" width="120" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="cascada"/>
+                                <connections>
+                                    <action selector="button_4:" destination="uOs-OF-Aa6" eventType="touchUpInside" id="yMn-h2-Eai"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Im5-Kt-ylL">
+                                <rect key="frame" x="147" y="686" width="120" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="isla"/>
+                                <connections>
+                                    <action selector="button_5:" destination="uOs-OF-Aa6" eventType="touchUpInside" id="m1v-3H-hUh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bve-DJ-gbQ">
+                                <rect key="frame" x="283" y="686" width="120" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="playa"/>
+                                <connections>
+                                    <action selector="button_6:" destination="uOs-OF-Aa6" eventType="touchUpInside" id="TcR-00-wzZ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Seleccione las imagenes en el orden de la secuencia anterior" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AHq-WD-A0n">
+                                <rect key="frame" x="10" y="120" width="393" height="139"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="u8O-rm-7uh"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Ql-4W-tKq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="822" y="19"/>
+            <point key="canvasLocation" x="821.73913043478262" y="18.75"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="arboles" width="259" height="194"/>
+        <image name="barco" width="279" height="181"/>
+        <image name="carretera" width="270" height="187"/>
+        <image name="cascada" width="259" height="194"/>
+        <image name="isla" width="306" height="165"/>
+        <image name="playa" width="275" height="183"/>
+    </resources>
 </document>

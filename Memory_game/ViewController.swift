@@ -30,14 +30,22 @@ class ViewController: UIViewController {
         
         photo_side.image = ImgShuffle[0]
         
-        let seconds: Double = 2
+        var seconds: Double = 0
         
         for i in 0 ... 5 {
-
-            DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
-                
-            }
             
+            seconds += 2
+            DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+                let j = i
+                self.photo_side.image = self.imagesArray[j]
+                
+                if j == 5 {
+                    let seconds2 : Double = 2
+                    DispatchQueue.main.asyncAfter(deadline: .now() + seconds2) {
+                        self.performSegue(withIdentifier: "enter_game_view" , sender: nil)
+                    }
+                }
+            }
         }
     }
 }
