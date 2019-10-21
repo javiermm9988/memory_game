@@ -26,7 +26,7 @@ class ViewController: UIViewController {
     
     func imageSequence() {
         imagesArray.shuffle()
-        let ImgShuffle = imagesArray.shuffled()
+        ImgShuffle = imagesArray.shuffled()
         
         photo_side.image = ImgShuffle[0]
         
@@ -34,13 +34,13 @@ class ViewController: UIViewController {
         
         for i in 0 ... 5 {
             
-            seconds += 2
+            seconds += 1
             DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
                 let j = i
                 self.photo_side.image = self.imagesArray[j]
                 
                 if j == 5 {
-                    let seconds2 : Double = 2
+                    let seconds2 : Double = 1
                     DispatchQueue.main.asyncAfter(deadline: .now() + seconds2) {
                         self.performSegue(withIdentifier: "enter_game_view" , sender: nil)
                     }

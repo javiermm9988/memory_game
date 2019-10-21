@@ -13,6 +13,7 @@
 		7F9EBA5F235466A500E5E199 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F9EBA5E235466A500E5E199 /* Assets.xcassets */; };
 		7F9EBA62235466A500E5E199 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F9EBA60235466A500E5E199 /* LaunchScreen.storyboard */; };
 		7F9EBA6A23546B8500E5E199 /* GameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9EBA6923546B8500E5E199 /* GameVC.swift */; };
+		7FD294E5235D98F900481EF7 /* photo_array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD294E4235D98F900481EF7 /* photo_array.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		7F9EBA61235466A500E5E199 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7F9EBA63235466A500E5E199 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F9EBA6923546B8500E5E199 /* GameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameVC.swift; sourceTree = "<group>"; };
+		7FD294E4235D98F900481EF7 /* photo_array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = photo_array.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		7F9EBA562354669E00E5E199 /* Memory_game */ = {
 			isa = PBXGroup;
 			children = (
+				7FD294E4235D98F900481EF7 /* photo_array.swift */,
 				7F9EBA572354669E00E5E199 /* AppDelegate.swift */,
 				7F9EBA592354669E00E5E199 /* ViewController.swift */,
 				7F9EBA6923546B8500E5E199 /* GameVC.swift */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FD294E5235D98F900481EF7 /* photo_array.swift in Sources */,
 				7F9EBA5A2354669E00E5E199 /* ViewController.swift in Sources */,
 				7F9EBA6A23546B8500E5E199 /* GameVC.swift in Sources */,
 				7F9EBA582354669E00E5E199 /* AppDelegate.swift in Sources */,

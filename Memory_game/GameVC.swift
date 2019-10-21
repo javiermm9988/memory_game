@@ -8,29 +8,55 @@ class GameVC: UIViewController {
         
     }
     
+    @IBOutlet weak var points_label: UILabel!
     
-    @IBAction func button_1(_ sender: Any) {
-        
+    var points : Int = 0
+    var endGame : Bool = false
+    
+    @IBAction func button_1(_ sender: UIButton) {
+        let imgButton: UIImage = (sender.imageView?.image!)!
+        if endGame == false {
+            imagenButtonAction(imageButton: imgButton)
+        }
     }
     
-    @IBAction func button_2(_ sender: Any) {
-        
+    @IBAction func button_2(_ sender: UIButton) {
+        let imgButton: UIImage = (sender.imageView?.image!)!
+        if endGame == false {
+            imagenButtonAction(imageButton: imgButton)
+        }
     }
     
-    @IBAction func button_3(_ sender: Any) {
-        
+    @IBAction func button_3(_ sender: UIButton) {
+        let imgButton: UIImage = (sender.imageView?.image!)!
+        if endGame == false {
+            imagenButtonAction(imageButton: imgButton)
+        }
     }
     
-    @IBAction func button_4(_ sender: Any) {
-        
+    @IBAction func button_4(_ sender: UIButton) {
+        let imgButton: UIImage = (sender.imageView?.image!)!
+        if endGame == false {
+            imagenButtonAction(imageButton: imgButton)
+        }
     }
     
-    @IBAction func button_5(_ sender: Any) {
-        
+    @IBAction func button_5(_ sender: UIButton) {
+        let imgButton: UIImage = (sender.imageView?.image!)!
+        if endGame == false {
+            imagenButtonAction(imageButton: imgButton)
+        }
     }
     
-    @IBAction func button_6(_ sender: Any) {
-        
+    @IBAction func button_6(_ sender: UIButton) {
+        let imgButton: UIImage = (sender.imageView?.image!)!
+        if endGame == false {
+            imagenButtonAction(imageButton: imgButton)
+        }
+    }
+    
+    func imagenButtonAction(imageButton : UIImage) {
+       
     }
     
 }
