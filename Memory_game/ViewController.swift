@@ -32,7 +32,7 @@ class ViewController: UIViewController {
         
         var seconds: Double = 0
         
-        for i in 0 ... 5 {
+        for i in 1 ... 5 {
             
             seconds += 1
             DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
