@@ -27,7 +27,6 @@ class ViewController: UIViewController {
     
     func imageSequence() {
         
-        
         imagesArray.shuffle()
         ImgShuffle = imagesArray.shuffled()
         

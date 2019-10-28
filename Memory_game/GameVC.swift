@@ -13,8 +13,6 @@ class GameVC: UIViewController {
         for i in 0...5 {
             print("Array pantalla 2: ", ImgShuffle[i].imageAsset as Any)
         }
-        
-        
     }
     
     @IBOutlet weak var points_label: UILabel!
@@ -34,59 +32,12 @@ class GameVC: UIViewController {
         }
     }
     
-    /*
-    @IBAction func button_2(_ sender: UIButton) {
-        let imgButton: UIImage = (sender.imageView?.image!)!
-        if endGame == false {
-            imagenButtonAction(imageButton: imgButton)
-        }
-    }
-    
-    @IBAction func button_3(_ sender: UIButton) {
-        let imgButton: UIImage = (sender.imageView?.image!)!
-        if endGame == false {
-            imagenButtonAction(imageButton: imgButton)
-        }
-    }
-    
-    @IBAction func button_4(_ sender: UIButton) {
-        let imgButton: UIImage = (sender.imageView?.image!)!
-        if endGame == false {
-            imagenButtonAction(imageButton: imgButton)
-        }
-    }
-    
-    @IBAction func button_5(_ sender: UIButton) {
-        let imgButton: UIImage = (sender.imageView?.image!)!
-        if endGame == false {
-            imagenButtonAction(imageButton: imgButton)
-        }
-    }
-    
-    @IBAction func button_6(_ sender: UIButton) {
-        let imgButton: UIImage = (sender.imageView?.image!)!
-        if endGame == false {
-            imagenButtonAction(imageButton: imgButton)
-        }
-        /*for i in 0...5 {
-            print("Array tras pulsar: ", ImgShuffle[i].imageAsset as Any)
-        }*/
-        
-        /*
-        let imgButton: UIImage = (sender.imageView?.image!)!
-        if endGame == false {
-            imagenButtonAction(imageButton: imgButton)
-        }*/
-        
-    }*/
     
     func imagenButtonAction(imageButton : UIImage) {
         
         print("Boton:", imageButton.imageAsset as Any)
         print("array:", ImgShuffle[clickNow].imageAsset as Any)
-        //print("Boton imagen:", imageButton as Any)
-        //print("array imagenes:", ImgShuffle[clickNow] as Any)
-       
+
         if (ImgShuffle[clickNow]==imageButton) {
             success_label.isHidden = false
             failure_label.isHidden = true
@@ -110,29 +61,6 @@ class GameVC: UIViewController {
         
         print("clicks \(clickNow)")
         
-        /*if ImgShuffle[clickNow].imageAsset == imageButton.imageAsset {
-            success_label.isHidden = false
-            failure_label.isHidden = true
-            
-            actuallyPoints += 1
-            
-            points.text! = ("Puntos: \(actuallyPoints)")
-        } else {
-            failure_label.isHidden = false
-            success_label.isHidden = true
-        }
-        
-        clickNow += 1
-        
-        if clickNow == 6 {
-            endGame = true
-            finish_game_label.isHidden = false
-        }
-        
-        print("clicks \(clickNow)")
-        */
-        
     }
 
-    
 }
