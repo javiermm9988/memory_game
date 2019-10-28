@@ -16,31 +16,35 @@ class ViewController: UIViewController {
     @IBOutlet weak var photo_side: UIImageView!
     
     var imagesArray : [UIImage] = [
-        #imageLiteral(resourceName: "isla"),
-        #imageLiteral(resourceName: "carretera"),
-        #imageLiteral(resourceName: "cascada"),
-        #imageLiteral(resourceName: "arboles"),
-        #imageLiteral(resourceName: "barco"),
-        #imageLiteral(resourceName: "playa")
+        #imageLiteral(resourceName: "1"),
+        #imageLiteral(resourceName: "2"),
+        #imageLiteral(resourceName: "3"),
+        #imageLiteral(resourceName: "4"),
+        #imageLiteral(resourceName: "5"),
+        #imageLiteral(resourceName: "6")
     ]
     
+    
     func imageSequence() {
+        
+        
         imagesArray.shuffle()
         ImgShuffle = imagesArray.shuffled()
         
-        photo_side.image = ImgShuffle[0]
-        
         var seconds: Double = 0
         
-        for i in 1 ... 5 {
+        for i in 0 ... 5 {
             
             seconds += 1
             DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
                 let j = i
-                self.photo_side.image = self.imagesArray[j]
+                self.photo_side.image = ImgShuffle[j]
+                
+                print("Array: ", ImgShuffle[j].imageAsset as Any)
                 
                 if j == 5 {
                     let seconds2 : Double = 1
+                    
                     DispatchQueue.main.asyncAfter(deadline: .now() + seconds2) {
                         self.performSegue(withIdentifier: "enter_game_view" , sender: nil)
                     }

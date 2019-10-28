@@ -10,6 +10,11 @@ class GameVC: UIViewController {
         finish_game_label.isHidden = true
         points.text = "Puntos: 0"
         
+        for i in 0...5 {
+            print("Array pantalla 2: ", ImgShuffle[i].imageAsset as Any)
+        }
+        
+        
     }
     
     @IBOutlet weak var points_label: UILabel!
@@ -29,6 +34,7 @@ class GameVC: UIViewController {
         }
     }
     
+    /*
     @IBAction func button_2(_ sender: UIButton) {
         let imgButton: UIImage = (sender.imageView?.image!)!
         if endGame == false {
@@ -62,15 +68,29 @@ class GameVC: UIViewController {
         if endGame == false {
             imagenButtonAction(imageButton: imgButton)
         }
-    }
+        /*for i in 0...5 {
+            print("Array tras pulsar: ", ImgShuffle[i].imageAsset as Any)
+        }*/
+        
+        /*
+        let imgButton: UIImage = (sender.imageView?.image!)!
+        if endGame == false {
+            imagenButtonAction(imageButton: imgButton)
+        }*/
+        
+    }*/
     
     func imagenButtonAction(imageButton : UIImage) {
         
-        clickNow += 1
+        print("Boton:", imageButton.imageAsset as Any)
+        print("array:", ImgShuffle[clickNow].imageAsset as Any)
+        //print("Boton imagen:", imageButton as Any)
+        //print("array imagenes:", ImgShuffle[clickNow] as Any)
        
-        if ImgShuffle[clickNow-1] == imageButton {
+        if (ImgShuffle[clickNow]==imageButton) {
             success_label.isHidden = false
             failure_label.isHidden = true
+            
             actuallyPoints += 1
             
             points.text! = ("Puntos: \(actuallyPoints)")
@@ -81,6 +101,8 @@ class GameVC: UIViewController {
             
         }
         
+        clickNow += 1
+        
         if clickNow == 6 {
             endGame = true
             finish_game_label.isHidden = false
@@ -88,6 +110,27 @@ class GameVC: UIViewController {
         
         print("clicks \(clickNow)")
         
+        /*if ImgShuffle[clickNow].imageAsset == imageButton.imageAsset {
+            success_label.isHidden = false
+            failure_label.isHidden = true
+            
+            actuallyPoints += 1
+            
+            points.text! = ("Puntos: \(actuallyPoints)")
+        } else {
+            failure_label.isHidden = false
+            success_label.isHidden = true
+        }
+        
+        clickNow += 1
+        
+        if clickNow == 6 {
+            endGame = true
+            finish_game_label.isHidden = false
+        }
+        
+        print("clicks \(clickNow)")
+        */
         
     }
 
