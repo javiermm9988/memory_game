@@ -10,12 +10,8 @@ class GameVC: UIViewController {
         finish_game_label.isHidden = true
         points.text = "Puntos: 0"
         
-        for i in 0...5 {
-            print("Array pantalla 2: ", ImgShuffle[i].imageAsset as Any)
-        }
     }
     
-    @IBOutlet weak var points_label: UILabel!
     @IBOutlet weak var success_label: UILabel!
     @IBOutlet weak var failure_label: UILabel!
     @IBOutlet weak var points: UILabel!
@@ -25,6 +21,9 @@ class GameVC: UIViewController {
     var endGame : Bool = false
     var clickNow : Int = 0
     
+    /// Con esta función, recibo el botón, cogo la imágen de su interior y la mando a otro método
+    ///
+    /// - Parameter sender: La imágen del botón
     @IBAction func button_1(_ sender: UIButton) {
         let imgButton: UIImage = (sender.imageView?.image!)!
         if endGame == false {
@@ -32,21 +31,21 @@ class GameVC: UIViewController {
         }
     }
     
-    
+    /// Compara la imágen del botón recibida con el array de imágenes pasado.
+    ///
+    /// - Parameter imageButton: <#imageButton description#>
     func imagenButtonAction(imageButton : UIImage) {
-        
-        print("Boton:", imageButton.imageAsset as Any)
-        print("array:", ImgShuffle[clickNow].imageAsset as Any)
 
         if (ImgShuffle[clickNow]==imageButton) {
             success_label.isHidden = false
             failure_label.isHidden = true
             
+            // Sumo un punto si la imágen es igual
             actuallyPoints += 1
-            
             points.text! = ("Puntos: \(actuallyPoints)")
             
         } else {
+            
             failure_label.isHidden = false
             success_label.isHidden = true
             
@@ -54,12 +53,11 @@ class GameVC: UIViewController {
         
         clickNow += 1
         
+        // Cuando el número de clicks es 6, el juego acaba
         if clickNow == 6 {
             endGame = true
             finish_game_label.isHidden = false
         }
-        
-        print("clicks \(clickNow)")
         
     }
 
